@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<answersets xmlns="http://www.ttu.edu/KRLab/AnswerSetSchema">
+   <answerset>
+      <literal name = "p">
+         <instance sign = "true">
+            <term name = "c" />
+         </instance>
+      </literal>
+   </answerset>
+</answersets>

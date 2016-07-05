@@ -1,0 +1,2 @@
+Main-Class: Parser
+Class-Path: sparc.jar dlv.mingw.exe clingo.exe 

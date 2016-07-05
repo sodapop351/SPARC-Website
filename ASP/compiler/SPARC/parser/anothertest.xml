@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<answersets xmlns="http://www.ttu.edu/KRLab/AnswerSetSchema">
+   <answerset>
+      <literal name = "mother">
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "xan" />
+         </instance>
+      </literal>
+      <literal name = "boys">
+         <instance sign = "true">
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+         </instance>
+      </literal>
+      <literal name = "parent">
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "whirl" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "false">
+            <term name = "girl" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "girl" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "girl" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "false">
+            <term name = "girl" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "false">
+            <term name = "girl" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "girl" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "false">
+            <term name = "girl" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "false">
+            <term name = "fun" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "fun" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "fun" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "false">
+            <term name = "fun" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "false">
+            <term name = "fun" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "fun" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "false">
+            <term name = "fun" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "false">
+            <term name = "twirl" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "twirl" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "twirl" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "false">
+            <term name = "twirl" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "false">
+            <term name = "twirl" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "false">
+            <term name = "twirl" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "false">
+            <term name = "twirl" />
+            <term name = "xan" />
+         </instance>
+      </literal>
+      <literal name = "people">
+         <instance sign = "true">
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+         </instance>
+      </literal>
+      <literal name = "father">
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "stan" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "man" />
+            <term name = "xan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "whirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "girl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "stan" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "fun" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "twirl" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "man" />
+         </instance>
+         <instance sign = "true">
+            <term name = "xan" />
+            <term name = "xan" />
+         </instance>
+      </literal>
+   </answerset>
+</answersets>
