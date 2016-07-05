@@ -1,0 +1,12 @@
+sudo apt-get install postfix
+Internet Site
+your domain name
+
+sudo apt-get install mailutils
+
+sudo vim /etc/postfix/main.cf
+change inet_interfaces value to localhost or loopback-only
+sudo service postfix restart
+
+try out e-mail with
+echo "This is the body of the email" | mail -s "This is the subject line" user@example.com
