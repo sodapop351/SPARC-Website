@@ -1,0 +1,14 @@
+I cannot click on the words in the director.
+When I created a new account, I got an error message. Next, I tried to create it again, and was told that the username already existed. As it turns out, the login was created correctly, so I was able to log in, but the error message threw me off. I wish I could re-create the error, but I don't want to create another account. It said something about a <br>, so it looks like it is choking on some HTML. Feel free to contact me.
+
+How do I put an existing file in a folder?
+
+
+
+
+
+when log with directory open, you do not refresh tab
+also when log-out and directory still open, do not refresh
+
+
+this is so nice
