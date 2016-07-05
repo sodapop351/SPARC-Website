@@ -1,0 +1,45 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Sonia Baee
+%% Description: Chapter 4 - exercise #9
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #class = { typeOfFlying, jets, birds, eagle, robin}.
+ 
+    #object = {e, jo, sr}.
+    
+    
+predicates
+    is_subclass(#class, #class).
+    is_a(#object, #class).
+    member(#object,#class).
+    subclass(#class,#class).
+    faster(#object,#object).
+rules
+    %facts
+    is_a(e,eagle).
+    is_a(jo,robin).
+    is_a(sr,jets).
+    
+    is_subclass(jets,typeOfFlying).
+    is_subclass(birds,typeOfFlying).
+    is_subclass(eagle, birds).
+    is_subclass(robin, birds).
+    
+    subclass(C1,C2) :- is_subclass(C1,C2).
+    subclass(C1,C2) :- is_subclass(C1,C3), subclass(C3,C2).
+    -subclass(C1,C2) :- not subclass(C1,C2).
+    
+    member(X,C) :- is_a(X,C).
+    member(X,C) :- is_a(X,SC) , subclass(SC,C).
+
+    faster(O1,O2) :- member(O1,jets), member(O2,birds).
+    faster(e, R) :- member(R,robin) , is_a(e,eagle).
+    
+    -faster(X,Y) :- not faster(X,Y).
+    
+    
+    
+    
+    

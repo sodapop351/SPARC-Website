@@ -1,0 +1,86 @@
+
+
+
+%%%%%%%
+%The file for #2 can just be a short file with the definition of uncle(U,N) read as
+%"U is the uncle of N." You can assume that you have all the sorts and
+%predicates that are defined in program s_family.sp on the book website.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sorts
+
+#person = {john, sam, bill, alice, bob}.
+#gender = {male, female}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+predicates
+
+father(#person,#person).
+mother(#person,#person).
+gender(#person,#gender).
+parent(#person,#person).
+child(#person,#person).
+brother(#person,#person).
+uncle(#person,#person).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+rules
+
+father(john,sam).
+father(john,bill).
+
+mother(alice,sam).
+mother(alice,bill).
+
+gender(john,male).
+gender(alice,female).
+gender(sam,male).
+gender(bill,male).
+
+parent(X,Y) :- father(X,Y).
+parent(X,Y) :- mother(X,Y).
+
+child(X,Y) :- parent(Y,X).
+
+brother(X,Y) :- gender(X,male),
+                father(F,X),
+                father(F,Y),
+                mother(M,X),
+                mother(M,Y),
+                X != Y.
+                
+                
+-father(X,Y) :- gender(X,female).
+
+-father(X,Y) :- father(Z,Y), 
+                X != Z.
+                
+                
+uncle(U,N) :- father(F,N),
+              brother(U,F),
+               N != U.
+                
+-uncle(U,N) :- gender(U,female).
+
+uncle(U,N) :- parent(Y,N),
+              brother(U,Y).
+              
+-uncle(U,N) :- parent(Y,N),
+               -brother(U,Y).  
+
+
+               
+
+               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                

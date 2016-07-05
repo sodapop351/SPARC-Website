@@ -1,0 +1,33 @@
+sorts
+#swtich ={s1}.
+#books = {b}.
+#people= {arn}.
+#rooms = {r}.
+#fluents= in_room(#people,#rooms).
+#fluents= unlocked(#people,#rooms).
+#fluents= light_on(#switch,#rooms).
+#fluents= ab(#switch,#rooms).
+#fluents= get_book(#people,#books).
+#actions=move(#people,#rooms).
+#actions=unlock(#people,#rooms).
+#actions=turn_on(#switch,#rooms).
+#actions=break_switch(#switch,#rooms).
+#actions=break_powerline(#switch,#rooms).
+#fluent_type={inertial,defined}.
+#action_type={agent,exogenous}.
+#boolean={true,false}.
+#steps = 0..n.
+predicates
+holds(#fluents,#steps).
+occurs(#actions,#steps).
+hpd(#actions,#steps).
+obs(#fluents,#boolean,#steps).
+fluent(#fluent_type,#fluents).
+action(#action_type,#actions).
+has_key(#people,#rooms).
+rules
+fluent(inertial,).
+fluent(inertial,).
+fluent(inertial,).
+fluent(inertial,).
+fluent(defined,).

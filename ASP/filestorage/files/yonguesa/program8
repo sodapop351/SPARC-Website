@@ -1,0 +1,53 @@
+% program 8.sp
+% Last Modified: 2/1/16
+% SPARC solution to Ch. 4, problem 7
+% ``A directed graph G can be described by a set of vertices, 
+% represented by facts vertex(a), vertex(b),... and a set of 
+% edges, represented by facts edge(a,b), edge(a,c),... 
+% Use ASP to define relation connected(X,Y) that holds iff 
+% there is a path in G connecting vertices X and Y.''
+% For the SPARC version, we choose to make ``vertex'' a sort 
+% instead of a predicate.
+
+
+% from hw : answer:
+% blocked(a,b).
+% -bocked(X,Y):- edge(X Y), not blocked (X Y).
+% connected (X,Y) :- edge(X Y), - blocked (X Y).
+%connected (X,Y) :- edge(X Z), -blocked(X,Z), connected (Z Y).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sorts
+
+#vertex = {a,b,c,d}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+predicates
+
+edge(#vertex, #vertex). 
+connected(#vertex, #vertex).
+blocked(#vertex,#vertex).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+rules
+
+% edge(X,Y) -- There is an edge from vertex X to vertex Y.
+% If an edge isn't listed, it doesn't exist.
+% Edges are directed.
+edge(a,b).
+edge(b,c).
+edge(c,d).
+edge(a,a). %loop edge
+-edge(X,Y) :- not edge(X,Y).
+
+% X is connected to Y iff there is a path from 
+% vertex X to vertex Y. AND if not blocked
+connected(X,Y) :- edge(X,Y),
+                not blocked(X,Y).
+connected(X,Y) :- edge(X,Z),
+                not blocked(X,Z),
+                  connected(Z,Y).
+-connected(X,Y) :- not connected(X,Y).
+
+blocked(X,Y) :- -connected(X,Y) %how to say <-X, <-Y
+               
+

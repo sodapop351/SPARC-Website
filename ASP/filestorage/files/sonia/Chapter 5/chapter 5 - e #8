@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Sonia Baee
+%% Description: Chapter 5 - exercise #7
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #course = {math, graphs}.
+    #student = {john, mary}.
+    #default = dLike(#student).
+predicates
+    took(#student, #course).
+    ab(#default).
+    can_graduate(#student).
+    
+rules
+    %facts
+    took(john,math).
+    took(john,graphs).
+    took(mary,graphs).
+
+    can_graduate(X) :- took(X,math), took(X,graphs).
+    -can_graduate(X) :- not can_graduate(X).
+    
+    %default
+    
+    %strong exception
+    
+    %weak exception
+    

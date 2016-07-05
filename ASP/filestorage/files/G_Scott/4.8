@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Griffin Scott    
+%% Description: Hw 4.8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+   #vertex = {a,b,c,d}.
+predicates
+    edge(#vertex, #vertex). 
+    connected(#vertex, #vertex).
+    blocked(#vertex, #vertex).
+rules
+ 
+% edge(X,Y) -- There is an edge from vertex X to vertex Y.
+
+% If an edge isn't listed, it doesn't exist.
+
+% Edges are directed.
+edge(a,b).
+edge(b,c).
+edge(c,d).
+edge(a,a). 
+%loop edge
+-edge(X,Y) :- not edge(X,Y).
+blocked(c,d).
+
+% X is connected to Y iff there is a path from 
+
+% vertex X to vertex Y.
+
+connected(X,Y) :- edge(X,Y), not blocked(X,Y).
+connected(X,Y) :- edge(X,Z),connected(Z,Y).
+
+-connected(X,Y) :- not connected(X,Y).

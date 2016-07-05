@@ -1,0 +1,14 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: 
+%% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #people = {sara, jim, bob}.
+predicates
+    father(#people, #people).
+rules
+    father(bob, sara).
+    father(jim,sara).
+    

@@ -1,0 +1,23 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Sabrina Yongue
+%% Description:Book Exercise Chapter 8 2.a
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#const n = 2.
+sorts
+    #inertial_fluent = {f,g}.
+    #defined = {h,a}.
+    #step = 0..n.
+predicates
+    holds(#inertial_fluent,#step).
+    
+    holds_(#defined,#step).
+    occurs(#defined,#step).
+
+rules
+
+holds(f,I+1) :- occurs(a,I),
+                holds(g,I).
+                
+holds_(h,I) :- holds(f,I),
+              holds(g,I).

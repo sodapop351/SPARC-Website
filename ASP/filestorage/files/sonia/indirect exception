@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: 
+%% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #class = {eagle, penguin, birds, animal,cat}.
+    #object = {sam,tweety,tabby}.
+    #default1 = dA(#object).
+    #default2 = dB(#object).
+    #default3 = dP(#object).
+    
+predicates
+    is_subclass(#class,#class).
+    subclass(#class,#class).
+    is_a(#object,#class).
+    member(#object,#class).
+    sibiling(#class,#class).
+    fly(#object).
+    ab1(#default1).
+    ab2(#default2).
+    ab3(#default3).
+rules
+    %fact
+    is_subclass(eagle,birds).
+    is_subclass(penguin,birds).
+    is_subclass(birds,animal).
+    is_subclass(cat,animal).
+    
+    is_a(sam,eagle).
+    is_a(tweety,penguin).
+    is_a(tabby,cat).
+    
+    subclass(X,Y) :- is_subclass(X,Y).
+    subclass(X,Y) :- is_subclass(X,Z), subclass(Z,Y).
+    
+    member(X,Y) :- is_a(X,Y).
+    member(X,Y) :- is_a(X,Z), subclass(Z,Y).
+    
+    sibiling(X,Y):- is_subclass(X,C), is_subclass(Y,C), X != Y.
+    
+    -member(X,C1) :- member(X,C2), sibiling(C1,C2), C1 != C2, not member(X,C1).
+    
+    %animals normally do not fly
+    -fly(X) :- member(X,animal), not ab1(dA(X)), not fly(X).
+    
+    %abnormally
+    ab1(dA(X)) :- not -member(X,birds).
+    
+    %birds normally fly
+    fly(X) :- member(X,birds), not ab2(dB(X)), not -fly(X).
+    
+    %abnormaly
+    ab2(dB(X)) :- not -member(X,penguin).
+    
+    
+    %penguins normally do not fly
+    -fly(X) :- member(X,penguin), not ab3(dP(X)), not fly(X).
+    
+    
+    

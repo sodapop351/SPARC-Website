@@ -1,0 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Griffin Scott    
+%% Description: Hw 4.2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    
+predicates
+    
+rules
+    uncle(X,Y) :- gender_of(X,male),
+                  father(F,Y),
+                  mother(M,Y),
+                  brother(X,F) Or brother(X,M).

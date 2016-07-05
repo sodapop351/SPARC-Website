@@ -1,0 +1,23 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Sonia Baee
+%% Description: Chapter 4 - exercise #8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #vertex = {a,b,c,d,e}.
+    
+predicates
+    edge(#vertex,#vertex).
+    connected(#vertex,#vertex).
+    no_blocked(#vertex,#vertex).
+    blocked(#vertex,#vertex).
+rules
+    edge(a,b).
+    blocked(b,c).
+    edge(c,d).
+    edge(d,e).
+    edge(e,a).
+    no_blocked(X,Y) :- edge(X,Y).
+    connected(X,Y) :- no_blocked(X,Y).
+    connected(X,Y) :- no_blocked(X,Z), connected(Z,Y).

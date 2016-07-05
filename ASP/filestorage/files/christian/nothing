@@ -1,0 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: 
+%% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #people = {sara, bob}.
+predicates
+    father(#people, #people).
+rules
+    father(bob, sara).
+    % hello dr. zhang. This is a test.
+    % Hi Christian, I got it. 
+    % hello again

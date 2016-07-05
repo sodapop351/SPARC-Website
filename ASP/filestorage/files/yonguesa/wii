@@ -1,0 +1,108 @@
+%%Chapter 9 #9
+
+
+#const n = 4.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sorts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#activity = {homework, make_bed, tkd, wii}.
+
+#inertial_fluent = complete(#activity).
+
+#defined_fluent = can_do(#activity).
+
+#fluent = #inertial_fluent + #defined_fluent.
+          
+#action = do(#activity).
+
+#step = 0..n.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+predicates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+holds(#fluent,#step).
+occurs(#action,#step).
+success().
+goal(#step).
+something_happened(#step).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+rules
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+holds(can_do(wii),I) :- holds(complete(homework),I),
+                         holds(complete(make_bed),I),
+                         holds(complete(tkd),I).
+
+
+-holds(can_do(wii),I) :- -holds(complete(homework),I),
+                         -holds(complete(make_bed),I),
+                         -holds(complete(tkd),I).
+
+holds(complete(A),I+1) :- occurs(do(A),I).
+                          %%not -holds(complete(A),I).
+
+                         
+-occurs(do(A),I) :- holds(complete(A),I).
+
+
+
+%% CWA for Defined Fluents
+
+-holds(F,I) :- #defined_fluent(F), 
+               not holds(F,I).
+
+%% General Inertia Axiom
+
+holds(F,I+1) :- #inertial_fluent(F),
+                holds(F,I),
+                not -holds(F,I+1).
+
+-holds(F,I+1) :- #inertial_fluent(F),
+                 -holds(F,I),
+                 not holds(F,I+1).
+                 
+%% CWA for Actions
+
+-occurs(A,I) :- not occurs(A,I).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%       
+%% Simple Planning Module using Disjunctive Rule:   
+  
+success :- goal(I).
+:- not success.
+
+occurs(A,I) | -occurs(A,I) :- not goal(I).
+                              
+%% Do not allow concurrent actions:
+:- occurs(A1,I),
+   occurs(A2,I),
+   A1 != A2.
+
+%% An action occurs at each step before
+%% the goal is achieved:
+
+something_happened(I) :- occurs(A,I).
+
+:- goal(I), goal(I-1),
+   J < I,
+   not something_happened(J).
+
+goal(I) :- holds(can_do(wii),I).
+
+%% starting state
+-holds(complete(make_bed),0).
+
+-holds(complete(tkd),0).
+
+-holds(complete(homework),0).
+
+-holds(can_do(wii),0).
+
+
+
+
+
+
+

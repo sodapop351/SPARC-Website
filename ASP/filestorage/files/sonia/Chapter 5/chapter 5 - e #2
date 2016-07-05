@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Sonia Baee
+%% Description: Chapter 5 - exercise #2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #person = {john,susan,bob,mary,arlond,kate}.
+    #default = dLike(#person).
+predicates
+    married(#person,#person).
+    ab(#default).
+    likes(#person,#person).
+rules
+    %facts
+    married(john,susan).
+    married(bob,mary).
+    married(arlond,kate).
+    
+    married(X,Y) :- married(Y,X), X != Y.
+    
+    %default
+    likes(X,Y) :- married(X,Y), not ab(dLike(X)), not -likes(X,Y).
+    
+    %strong exception
+    ab(dLike(bob)) :- not -married(bob,Y).
+    -likes(bob,X) :- married(bob,X).
+    
+    %weak exception
+    ab(dLike(kate)) :- not -married(kate,Y).

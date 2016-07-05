@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CSCI 470 - Homework 6 P2
+%% Author: Jesse Hunt
+%% 
+%% Description:
+%% Write a SPARC program which, given a graph G,
+%% finds an assignment of colors green, purple, or gold to each vertex
+%% such that no adjacent vertices share a color.
+%% Let's assume that graphs are represented as collections 
+%% of vertices and edges, similar to the way they were in the 
+%% "connected" assignment.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sorts
+
+#vertex = {a,b,c,d}.
+#color = {green, purple, gold}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+predicates
+
+vertex_color(#vertex, #color).
+edge(#vertex, #vertex).
+connected(#vertex, #vertex).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+rules
+
+vertex_color(a,green).
+vertex_color(b,purple).
+vertex_color(c,gold).
+vertex_color(d,green).
+
+edge(X,Y) :- vertex_color(X,Z),
+             vertex_color(Y,A),
+             Z != A.

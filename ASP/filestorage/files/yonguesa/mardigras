@@ -1,0 +1,18 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Sabrina Yongue
+%% Description:
+%%Write a SPARC program to represent the following story: 
+%%Normally, children's books aren't creepy. 
+%%books by Avi are an exception. 
+%%They may or may not be creepy. 
+%%Avi's book called "Strange Happenings" is creepy. 
+%%Do not assume that you have a complete list of books in your knowledge base.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #people = {sara, bob}.
+predicates
+    father(#people, #people).
+rules
+    father(bob, sara).

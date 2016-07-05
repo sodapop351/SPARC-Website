@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Griffin Scott
+%% Description: Hw 4.9
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+   #flying_object = {jet, bird, robin, eagle, blackbird, jo}.
+
+   
+predicates
+   faster(#flying_object, #flying_object).
+   class(#flying_object).
+   subclass(#flying_object, #flying_object).
+   is_a(#flying_object, #flying_object).
+   member(#flying_object, #flying_object).
+rules
+   class(jet).
+   class(bird).
+   class(robin).
+   class(eagle).
+   
+   subclass(robin, bird).
+   subclass(eagle, bird).
+   
+   is_a(blackbird, jet).
+   is_a(jo, robin).
+   
+   member(X, Y) :- X = Y.
+   member(X, Y) :- subclass(X, Y).
+   member(X, Y) :- is_a(X, Y).
+   member(X, Y) :- is_a(X ,C),
+                   subclass(C, Y).
+                 
+         
+   faster(X, Y) :- member(X, jet), member(Y, bird). %The faster flying object is a jet compared to a bird.
+   faster(X, Y) :- member(X, eagle), member(Y, robin). %The faster bird is a eagle compared to a robin.
+   
+   -faster(X, Y) :- not faster(X,Y).

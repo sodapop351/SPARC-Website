@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HW 7 #5
+%% Author: Jesse Hunt
+%%
+%%
+%%
+%%
+%% Action Language:
+%%
+%% object = {claire, phone}
+%% location = {library, mall, school}
+%% 
+%% inertial fluent
+%% carried(object, object)
+%% 
+%% at(object, location)
+%%
+%% action
+%% move(object, location) causes at(object, location)
+%%
+%% at(X, L) if carried (X, Y),
+%% 	       at(Y,L)
+%%
+%% -at(object, location) <- not at(object, location)
+%%
+%% -carried(object, object) <- not carried(object, object)
+%%
+%%
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+	#object = {claire, phone, rod, towel}.
+	#location = {mall, school, library}.
+	
+    #inertial_fluent = carried(#object, #object) + 
+			   at(#object, #location).
+	#fluent = #inertial_fluent.
+	#action = move(#object, #location).
+	#step = 0..1.
+predicates
+    holds(#fluent,#step).
+	occurs(#action,#step).
+
+	at(#object, #location).
+	carried(#object, #object).
+	move(#object, #location).
+rules
+
+	%% An object is at a location and at no other location
+	at(X, Y) :- -at(X, Z).
+
+	%% An object is at somewhere if it is carried.
+	at(X, L) :- carried(X, Y),
+		    at(Y, L).
+	
+	carried(X, Y) :- carried(Y, X),
+			 -carried(X, Z),
+			 -carried(Y, Z).
+	at(claire, L1) :- at(rob, L2),
+			  L1 != L2.
+
+	at(rob, L1) :- at(claire, L2),
+			  L1 != L2.
+
+	%% Move causes an object to change location.
+	holds(at(X,L), I+1) :- occurs(move(X, L), I).
+	
+
+	%% General Inertia Axiom
+
+	holds(F,I+1) :- #inertial_fluent(F),
+  		holds(F,I),
+		not -holds(F,I+1).
+
+	-holds(F,I+1) :- #inertial_fluent(F),
+	         -holds(F,I),
+	         not holds(F,I+1).
+                 
+	%% CWA for Actions
+	-occurs(A,I) :- not occurs(A,I).
+
+	%%Initial situation
+	at(claire, library).
+	at(rod, mall).
+	carried(phone, claire).
+	carried(towel, rod).
+	occurs(move(claire, school),0).
+
+	

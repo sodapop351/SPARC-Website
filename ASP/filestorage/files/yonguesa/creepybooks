@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: Sabrina Yongue
+%% Description:
+%%Write a SPARC program to represent the following story: 
+%%Normally, children's books aren't creepy. 
+%%books by Avi are an exception. 
+%%They may or may not be creepy. 
+%%Avi's book called "Strange Happenings" is creepy. 
+%%Do not assume that you have a complete list of books in your knowledge base.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #book = {somebook, randombook, strange_h}.
+    #author = {avi, someone}.
+    #default = d(#book).
+
+predicates
+    author_of(#author,#book).
+    is_creepy(#book).
+    ab(#default).
+rules
+    author_of(avi, strange_h).
+    author_of(avi, randombook).
+    author_of(someone, somebook).
+    
+    ab(d(strange_h)).
+    is_creepy(strange_h).
+    
+    -is_creepy(B) :- not is_creepy(B),
+                      not ab(d(B)).
+                      
+    ab(d(B)) :- author_of(avi,B).

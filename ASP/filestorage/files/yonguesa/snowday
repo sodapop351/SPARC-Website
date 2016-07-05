@@ -1,0 +1,39 @@
+sorts 
+#day = {d1,d2}.
+#default = d(#day).
+
+predicates 
+
+schoolday(#day). 
+open_school(#day).
+ab(#default).
+snowday(#day). 
+
+rules 
+
+% A day is considered to be a schoolday according to 
+% the school calendar if it is not stated to be
+% otherwise:
+schoolday(D) :- 
+       not -schoolday(D). 
+
+% Schools are normally open on schooldays:
+open_school(D) :-
+       schoolday(D),
+       not ab(d(D)),
+       not -open_school(D). 
+
+% If school is open on day D, then D is not a snowday.
+-snowday(D) :-
+       open_school(D). 
+
+snowday(d1). 
+
+% In very rare cases, schools are closed on schooldays:
+
+
+
+
+
+
+

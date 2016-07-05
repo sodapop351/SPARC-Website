@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HW5 - PROBLEM 9
+%% Author: Jesse Hunt
+%% Description: Saxophone default exercise
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sorts
+    #class = {saxophone, selmer_mark_vi, high_d_key, spring}.
+    #object = {mo_sax, jack_sax, mo_key, jack_key, mo_spring, jack_spring}.
+    #person = {mo, jack}.
+    #default = d(#object).
+    
+predicates
+    is_subclass(#class,#class).
+    subclass(#class,#class).
+    
+    is_a(#object, #class).
+    
+    belongs_to(#object, #person).
+    
+    broken(#object).
+    
+    part_of(#object, #object).
+    
+    
+rules
+    subclass(C1,C2) :- is_subclass(C1,C2).
+    subclass(C1,C2) :- is_subclass(C1,C3),
+                       subclass(C3,C2).
+                       
+    part_of(O1, O2) :- part_of(O1, O2),
+                       is_a(O1, C1),
+                       is_a(O2, C2),
+                       subclass(C1,C2).
+                       
+    part_of(O1, O3) :- part_of(O1, O2),
+                       part_of(O2, O3).
+    
+    -part_of(O1, O2) :- not part_of(O1, O2).
+                      
+                       
+    is_subclass(selmer_mark_vi, saxophone).
+    is_subclass(high_d_key, selmer_mark_vi).
+    is_subclass(spring, high_d_key).
+    
+    
+    is_a(mo_sax, selmer_mark_vi).
+    is_a(mo_key, high_d_key).
+    is_a(mo_spring, spring).
+    part_of(mo_key, mo_sax).
+    part_of(mo_spring, mo_key).
+    
+    is_a(jack_sax, selmer_mark_vi).
+    is_a(jack_key, high_d_key).
+    is_a(jack_spring, spring).
+    part_of(jack_key, jack_sax).
+    part_of(jack_spring, jack_key).
+    
+    belongs_to(mo_sax, mo).
+    belongs_to(jack_sax, jack).
+    
+    -broken(X) :- not broken(X).
+    
+    broken(X) :- broken(X).
+    
+    broken(X) :- broken(Y),
+                 part_of(Y, X).
+                 
+    broken(mo_spring).
+    
+    
+    
+    
+    

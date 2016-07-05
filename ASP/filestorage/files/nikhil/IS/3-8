@@ -1,0 +1,56 @@
+sorts
+    #students = {john,mary,bob,rick}.
+    #courses = {math,graphs}.
+    #default=d(#students).
+    
+predicates
+    % took(X,C) => student X has taken course C.
+    took(#students, #courses).
+    
+    % student(X) => X is a student.
+    student(#students).
+    
+    % course(X) => X is a course.
+    course(#courses).
+
+    ab(#default).
+    
+    % all_courses(X) => X has taken all the courses listed in the knowledgebase. 
+    all_courses(#students). 
+    
+    %can_graduate(X) => True if student X can graduate. 
+    can_graduate(#students).
+    
+    %review_records(X) => True if X can_graduate is unknown
+    review_records(#students).
+    
+rules
+    student(john).
+    student(mary).
+    student(bob).
+    student(rick).
+    course(math).
+    course(graphs).
+    took(john,math).
+    took(john,graphs).
+    took(mary,graphs).
+    -took(mary,math).
+    -took(bob,math).
+    all_courses(X):- took(X,graphs),took(X,math),student(X).
+    %student has not taken all_courses if he did not take any course.
+    -all_courses(X):- student(X),-took(X,C1),-took(X,C2),
+                course(C1),course(C2),C1!=C2.
+    %student has not taken all courses if he did not take atleast one course.
+    -all_courses(X) :-student(X), took(X,C1),-took(X,C2),
+                course(C1),course(C2),C1!=C2.
+    %student has taken any course if he did not take even one course.
+    -all_courses(X) :- -took(X,C),course(C),student(X).
+    % student can graduate if he takes all courses. 
+    can_graduate(X):- student(X),all_courses(X).
+    % student cannot graduate if he does not take atleast one course
+    -can_graduate(X):- student(X),-all_courses(X),
+                    not ab(d(X)), 
+                    not can_graduate(X).
+    %review_records(X) => True if X can_graduate is unknown
+    review_records(X):- not can_graduate(X), 
+                        not -can_graduate(X).
