@@ -1,0 +1,69 @@
+LAMP Stack Preparation
+
+Install PHP
+sudo apt-get install php5-common libapache2-mod-php5 php5-cli
+
+Install Apache
+sudo apt-get install apache2
+
+Get IP Address
+    1. ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+    2. Type IP address into browser and confirm Apache works
+
+Install MySQL
+sudo apt-get install mysql-server php5-mysql
+
+Create database directory structure
+sudo mysql_install_db
+
+Remove dangerous defaults
+    1. sudo mysql_secure_installation
+    2. Accept default enters by hitting ENTER
+
+Change default home page
+    1. sudo nano /etc/apache2/mods-enabled/dir.conf
+    2. Move index.php to before index.html
+    3. CTRL-X to save and close, Y to confirm, ENTER to confirm filename
+
+Restart Apache
+sudo service apache2 restart
+
+Install Git
+sudo apt-get install git
+
+Set Git defaults
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+
+Install Java
+sudo apt-get install default-jre
+
+Give yourself permission to all files in /var/www/
+    1. sudo gpasswd -a "$USER" www-data
+    2. sudo chown -R "$USER":www-data /var/www
+    3. find /var/www -type f -exec chmod 0660 {} \;
+    4. sudo find /var/www -type d -exec chmod 2770 {} \;
+
+Place all files in in the /var/www/html folder
+    1. cd /var/www/html
+    2. git clone <url>
+
+Place the dlv bin into the /usr/local/bin path
+    1. cd /var/www/html/ASP-IDE-Online/compiler
+    2. sudo cp dlv /usr/local/bin
+    Note: if your machine is not 64-bit then you will need to download
+        dlv from the internet with the appropriate machine type.
+
+Change default Apache DocumentRoot
+    1. sudo vim /etc/apache2/sites-available/000-default.conf
+    2. Change DocumentRoot to /var/www/html/ASP-IDE-Online (or whichever)
+
+Create MySQL database
+    1. (sudo) mysql
+    2. show databases
+    3. create database aspideo_filestorage
+    4. connect aspideo_filestorage
+    5. \. <PATH_TO_ASP-DB.SQL>
+        5a. i.e: \. /var/www/html/ASP-IDE-Online/database/ASP-DB.sql
+    6. show tables
+        6a. There should be new tables and instances in the tables

@@ -1,0 +1,38 @@
+1. Log-in to aws.amazon.com
+2. On dashboard, click EC2
+
+// Creating Security Group
+3. Click Security Groups > Create Security Group
+4. Add security group name and description
+    4a. In my case, it was txtech-reu2015
+5. Add Rules
+    5a. SSH, Source Anywhere
+    5b. HTTP, Source Anywhere
+
+// Creating Key-Pair
+6. Click Key Pairs > Create Key Pair
+7. Name it and then save the .pem file [!! important]
+8. chmod 400 file.pem
+
+// Creating Instance
+9. Click Instance > Launch Instance
+10. Select Ubuntu Server 14.04 "Free tier eligible"
+11. Choose instance type "Free tier eligble"
+    11a. In my case, it was General Purpose, 1 CPU, 1 GB Memory
+12. Don't change anything in Configure Instance > Next
+13. Don't change anything in Add Storage > Next
+14. Create key-value pair Name-Webserver > Next
+15. Select an existing security group
+    15a. Select the txtech-reu2015 security group
+16. Click Launch and select the key-pair you created earlier
+17. Wait for it to launch
+
+// SSH
+18. If you are on windows, download PuTTy
+    18a. Get the DNS from the instance page
+        18aa. In my example, mine is ec2-52-25-88-7.us-west-2.compute.amazonaws.com
+    18b. Put that in the host name
+    18c. Add the private key....
+19. If you are on a linux machine
+    19a. Find the public IP address from the 
+    19b. ssh -i /path/to/.pem ubuntu@ip-address

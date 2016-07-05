@@ -1,0 +1,9 @@
+Download Java JRE (you might already have this)
+Download XAMPP
+Start XAMPP
+Click Start next to Apache
+Navigate to C:\xampp\htdocs (or try to find it)
+Right click > Git Bash Here
+git clone https://christian_reotutar@bitbucket.org/christian_reotutar/asp-ide-online.git
+Go into a browser and type 127.0.0.1/ASP-IDE-Online
+It should work

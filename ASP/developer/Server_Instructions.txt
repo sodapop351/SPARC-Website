@@ -1,0 +1,11 @@
+1. put 'developer' key somewhere safe (not in a Git repository)
+2. to log-in
+    2a. if linux use command 'ssh -i developer developer@52.25.88.7'
+    2b. if windows, download PuTTy, put IP as 'developer@52.25.88.7'
+3. navigate to developer folder with 
+    3a. cd /var/www/html/ASP-IDE-Online/development
+4. change anything in development folder to fix problems
+    4a. do not change anything in the parent folders
+    4b. try not to push changes before telling others
+5. to check your changes visit the website then navigate to development
+    5a. http://ec2-52-25-88-7.us-west-2.compute.amazonaws.com/development
