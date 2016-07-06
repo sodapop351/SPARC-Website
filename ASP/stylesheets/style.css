@@ -126,12 +126,15 @@
     background-color: #FF0000;
     color: #FFFFFF;
     top: 60%;
-    right: 57%;
-    left: 43%;
+    right: 56%;
+    left: 44%;
     width: 7%;
     height: 5%;
     z-index: 99;
     opacity: 1;
+    border-radius: .5em;
+    text-align: center;
+    font-size: 125%;
 }
 
 /*

@@ -414,6 +414,11 @@ $(document).ready(function() {
         setEditorFontSize(font_size);
     });
 
+    /***********************LOADING SCREEN STARTS HERE*****************************/
+    $('#terminate').click(function(e) {
+        $('.overlay').hide();
+    });
+
     /* This does not work
     $(document).on("click", ".dir-folder", function() {
         var folderurl = $(this).data("value");

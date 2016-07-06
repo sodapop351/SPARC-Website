@@ -35,9 +35,11 @@
         <!-- **** LOADING SCREEN **** -->
     <div class="overlay" id="screen">
         <img src="http://i.stack.imgur.com/MnyxU.gif" class="overlay" id="loading"/>
-        <div class="overlay" id="terminate">
-        <p>TERMINATE!</p>
-        </div>
+        <button class="overlay" id="terminate">
+            <STRONG>
+                TERMINATE
+            </STRONG>
+        </button>>
     </div>
     <!-- **** END OF LOADING SCREEN **** -->
         <div id="wrapper" class="toggled">
