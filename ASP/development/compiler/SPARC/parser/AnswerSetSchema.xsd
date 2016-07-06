@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ttu.edu/KRLab/AnswerSetSchema" xmlns:tns="http://www.ttu.edu/KRLab/AnswerSetSchema" elementFormDefault="qualified">
+
+<element name="answersets" type="tns:AnswerSetsType"></element>
+
+<complexType name="AnswerSetsType">
+	<sequence minOccurs="0" maxOccurs="unbounded">
+		<element name="answerset" type ="tns:AnswerSetType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="AnswerSetType">
+	<sequence minOccurs="0" maxOccurs="unbounded">
+		<element name = "literal" type="tns:LiteralType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="LiteralType">
+	<sequence minOccurs="0" maxOccurs="unbounded">
+		<element name="instance" type = "tns:InstanceType"></element>
+	</sequence>
+	<attribute name = "name" type="string"></attribute>
+</complexType>
+
+<complexType name="InstanceType">
+	<sequence minOccurs="0" maxOccurs="unbounded">
+		<element name="term" type="tns:TermType"></element>
+	</sequence>
+	<attribute name = "sign" type="boolean"></attribute>
+</complexType>
+
+<complexType name="TermType">
+	<sequence minOccurs="0" maxOccurs="unbounded">
+		<element name="term" type="tns:TermType"></element>
+	</sequence>
+	<attribute name= "name" type="string"></attribute>
+</complexType>
+
+
+</schema>

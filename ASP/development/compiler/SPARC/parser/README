@@ -1,0 +1,12 @@
+To run:
+
+    java -jar asparser.jar -input:<filename> -output<filename>
+        -inputformat:<format> -outputformat:<format>
+
+    -input: if there is no input specified, reads from stdin
+    -output: if there is no output specified, writes to stdout
+    -inputformat: possible DLV/SPARC/Clingo, SPARC default
+    -outputformat: possible XML/JSON, XML default
+
+If you get a error, you may need to upgrade your java version to the
+latest version.

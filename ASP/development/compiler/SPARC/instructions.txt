@@ -1,0 +1,2 @@
+java -jar sparc.jar shuttle.sp -A //answer set
+java -jar sparc.jar shuttle.sp //run query mode

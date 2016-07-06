@@ -1,0 +1,113 @@
+
+
+#editor { 
+    position: fixed;
+    margin: 0;
+    /*margin-top: 25px; */
+    float: left;
+    width: 55%;
+    height: 100%;
+    top: 50;
+}
+#qform{
+	/*margin-left: 200px;*/
+}
+#btn_save{
+	margin-right: 0px;
+}
+#results {
+    position: relative;
+    margin: 0;
+    float: right;
+    width: 39%;
+}
+
+#current_file {
+    /*display: none;*/
+}
+
+#current_user {
+    /*display: none;*/
+}
+
+#navbar {
+    min-width: 1025px;
+}
+
+.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
+    background-color: #ff8627;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+}
+
+
+.login-tab {
+    margin: 0 auto;
+    max-width: 380px;
+}
+
+.login-modal-header {
+    background: #27ae60;
+    color: #fff;
+}
+
+.login-modal-header .modal-title {
+    color: #fff;
+}
+
+.login-modal-header .close {
+    color: #fff;
+}
+
+.login-modal i {
+    color: #000;
+}
+
+.login-modal form {
+    max-width: 340px;
+}
+
+.tab-pane form {
+    margin: 0 auto;
+}
+.login-modal-footer{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.help-block-has-error{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+#column-resizer {
+    position: fixed;
+    left: 56%;
+    cursor: col-resize;
+    margin: 0;
+    padding: 0;
+    width: 0.8%;
+    height: 100%; /* TODO CHANGE HEIGHT*/
+    background-color: #DDD;
+    border-radius: 3px;
+}
+
+/*
+#div_editorpanel {
+    width: 49%;
+}
+
+#span_currentfolder {
+    width: 49%;
+    background-color: #e1e1e1;
+    float: left;
+}
+
+#span_currentfile {
+    width: 49%;
+    background-color: #e1e1e1;
+    float: left;
+}*/
