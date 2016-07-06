@@ -95,6 +95,45 @@
     border-radius: 3px;
 }
 
+.overlay {
+    display: none;
+    position: absolute;
+}
+
+#screen {
+    background: #F0F0F0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: 98;
+}
+
+#loading {
+    top: 45%;
+    right: 45%;
+    bottom: 45%;
+    left: 45%;
+    width: 5%;
+    height: 10%;
+    z-index: 99;
+}
+
+#terminate {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    top: 60%;
+    right: 57%;
+    left: 43%;
+    width: 7%;
+    height: 5%;
+    z-index: 99;
+    opacity: 1;
+}
+
 /*
 #div_editorpanel {
     width: 49%;

@@ -237,6 +237,7 @@ $(document).ready(function() {
         var editorValue = editor.getValue();
         var data = {'action': "getAnswerSets",
                     'editor': editorValue};
+                    $(".overlay").show();
 
         // Expected response : answer sets in XML
         $.post(ajaxurl, data, function(response) {

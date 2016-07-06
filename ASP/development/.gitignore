@@ -1,0 +1,15 @@
+node_modules/
+database/conf.php
+christians-vbox.pem
+scripts/ace-builds-old/
+scripts/ace-master/
+developer
+reu
+filestorage/files/
+filestorage/files/*
+development/
+compiler/SPARC/temp.sp
+compiler/SPARC/tempquery.txt
+compiler/SPARC/parser/output.xml
+compiler/SPARC/parser/temp.txt
+issues.txt
