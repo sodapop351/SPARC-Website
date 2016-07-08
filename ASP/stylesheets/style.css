@@ -96,8 +96,8 @@
 }
 
 .overlay {
+    position: fixed;
     display: none;
-    position: absolute;
 }
 
 #screen {

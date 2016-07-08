@@ -204,3 +204,19 @@ function cp_getQuery($code, $query) {
     exit;
 }
 ?>
+<!-- LOADING SCREEN WIP --
+<!Doctype>
+<html>
+	<body>
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+		<script src="scripts/navbar-response.js" type="text/javascript" charset="utf-8"></script>
+		<div class="overlay" id="screen">
+        <img src="http://i.stack.imgur.com/MnyxU.gif" class="overlay" id="loading"/>
+        <button class="overlay" id="terminate">
+            <STRONG>
+                TERMINATE
+            </STRONG>
+        </button>>
+    </div>
+	</body>
+</html>
