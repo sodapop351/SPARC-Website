@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <answersets xmlns="http://www.ttu.edu/KRLab/AnswerSetSchema">
+   <answerset>
+      <literal name = "father">
+         <instance sign = "true">
+            <term name = "bob" />
+            <term name = "sara" />
+         </instance>
+      </literal>
+   </answerset>
 </answersets>

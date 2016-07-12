@@ -239,7 +239,6 @@ $(document).ready(function() {
                     'editor': editorValue};
                     $(".overlay").show(); //Loading screen shows when answer sets button is pushed
 
-
         // Expected response : answer sets in XML
         $.post(ajaxurl, data, function(response) {
             setResultsToString(response);

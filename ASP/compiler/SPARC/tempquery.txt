@@ -1,2 +1,2 @@
-jkk
+holds(f,1), -holds(g,1), -holds(h,1)
 exit

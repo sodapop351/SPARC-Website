@@ -8,7 +8,7 @@
 		- the variable vizAtoms is the vector containing visual atoms (answer set of test.txt)
 		- We will call the void function "translate" on vizAtoms and print the translation of atoms
 		- inside function translate you can see there are 4 translation functions related to each paerson's part. 
-		  Implement each function based on the explanation that you see. One function per person. RW
+		  Implement each function based on the explanation that you see. One function per person. 
 		  
 	Important Note: If you write the SPARC program incorrect you can not see any result. Now the test file contains 
 					a correct SPARC program. You can test whether you get the correct answer set first by printing the 
@@ -276,19 +276,10 @@ class AnswerSet {
 
 class Parser{
 
-    /* input: path to a sparc program
-
-    
-*/
-    public static String[] computeAnswerSets(String programPath) {
-
-	        OsUtils.runCommand("java", " -jar /var/www/html/compiler/SPARC/sparc-new.jar -A "+programPath, "");
-		String[] output =new String[2];
-
-		output[0]=OsUtils.result.toString();
-		output[1]=OsUtils.errors.toString();
-
-		   return output;
+    public static String computeAnswerSets(String programPath) {
+	       OsUtils.runCommand("java", " -jar compiler/sparc/canvas/sparc.jar -A "+programPath, "");
+		   
+		   return OsUtils.result.toString();
 	}
 
 		
@@ -880,11 +871,10 @@ System.out.println("</script>");
 		//initialize an vector of string for storing drawing commands
 		Vector<String> vizAtoms=new Vector<String>();
 		
-		String[] result = computeAnswerSets(args[0]);
-		ArrayList<AnswerSet> answerSets = parseResult(result[0]);
+		String result = computeAnswerSets(args[0]);
+		ArrayList<AnswerSet> answerSets = parseResult(result);
 
-		System.out.println("<p>"+result[1]+"</p>");		
-
+		
 		//for each answer set we get the drawing commands by calling getVizAtoms
 		//therefore
 		
@@ -912,7 +902,6 @@ System.out.println("</script>");
 		}
 		
 		if(numOfAS==0){
-			
 			System.out.println("Warning 2: No answer set");
 			return;
 		}
