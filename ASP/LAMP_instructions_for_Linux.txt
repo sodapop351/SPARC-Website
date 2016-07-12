@@ -39,7 +39,7 @@ Install Java
 sudo apt-get install default-jre
 
 Give yourself permission to all files in /var/www/
-    1. sudo gpasswd -a "$USER" www-data
+    1. sudo gpasswd -a "$USER" www-data 
     2. sudo chown -R "$USER":www-data /var/www
     3. find /var/www -type f -exec chmod 0660 {} \;
     4. sudo find /var/www -type d -exec chmod 2770 {} \;
