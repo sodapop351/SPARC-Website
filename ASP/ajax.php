@@ -360,6 +360,10 @@ if (isset($_POST['action'])) {
 
             break;
 
+        case 'stopExecution':
+            exit();
+            break;
+
         default:
             echo "Not a valid action";
             break;

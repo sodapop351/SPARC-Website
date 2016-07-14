@@ -1,4 +1,5 @@
 var ajaxurl = 'ajax.php';
+var timer;
 
 /*
     refreshDirectory() : empties the directory, refills with
@@ -237,10 +238,13 @@ $(document).ready(function() {
         var editorValue = editor.getValue();
         var data = {'action': "getAnswerSets",
                     'editor': editorValue};
-                    $(".overlay").show(); //Loading screen shows when answer sets button is pushed
+        $(".overlay").show(); //Loading screen shows when answer sets button is pushed
+        timer = window.setTimeout(stop, 300000);
 
         // Expected response : answer sets in XML
         $.post(ajaxurl, data, function(response) {
+            $(".overlay").hide();
+            window.clearTimeout(timer);
             setResultsToString(response);
         });
     });
@@ -417,7 +421,19 @@ $(document).ready(function() {
     /***********************LOADING SCREEN STARTS HERE*****************************/
     $('#terminate').click(function(e) {
         $('.overlay').hide();
+        window.clearTimeout(timer);
+        var data = {'action': "stopExecution"}
+        $.post(ajaxurl, data, function(response){
+        });
     });
+
+    function stop() {
+        $('.overlay').hide();
+        var data = {'action': "stopExecution"}
+        $.post(ajaxurl, data, function(response){
+            alert("Run time is too long. Program auto-terminated.");
+        });
+    }
 
     /* This does not work
     $(document).on("click", ".dir-folder", function() {
